@@ -1,0 +1,158 @@
+<style>
+/*
+.bpop strong {
+    font-weight:bold;
+    color:#7ccd60;
+}
+
+.button {
+    background-color:#2b91af;
+    border-radius:10px;
+    box-shadow:0 2px 3px rgba(0, 0, 0, 0.3);
+    color:#fff;
+    cursor:pointer;
+    display:inline-block;
+    padding:10px 20px;
+    text-align:center;
+    text-decoration:none;
+}
+
+
+.button2 {
+border-width:2px;
+border-style:inset;
+}
+.button.small {
+    border-radius:15px;
+    float:right;
+    margin:22px 5px 0;
+    padding:6px 15px;
+}
+.button:hover {
+    background-color:#1e1e1e;
+}
+
+.button>span {
+    font-size:84%;
+}
+
+.button.bClose {
+    border-radius:7px 7px 7px 7px;
+    box-shadow:none;
+    font:bold 131% sans-serif;
+    padding:0 6px 2px;
+    position:absolute;
+    right:-7px;
+    top:-7px;
+}
+*/
+
+
+
+/*
+.navAgents_tabs_UNIQUE_generic_bpopup {
+        display:block;
+        line-height:1.25;
+}
+
+#navAgents_tabs_UNIQUE_route_menu_static_add_popup, .bMulti {
+        background-color:#fff;
+        border-radius:10px 10px 10px 10px;
+        box-shadow:0 0 25px 5px #999;
+        color:#111;
+        display:none;
+        min-width:500px;
+		max-width:500px;
+        padding:25px;
+}
+   
+#navAgents_tabs_UNIQUE_route_menu_static_add_popup, .bMulti {
+    min-height:100px;
+
+}
+
+#navAgents_tabs_UNIQUE_route_menu_static_add_popup .logo {
+        color:#2B91AF;
+        font: bold 225% 'Petrona', sans;
+}
+*/
+
+
+    label, input { display:block; }
+    input.text { margin-bottom:12px; width:95%; padding: .4em; }
+    fieldset { padding:0; border:0; margin-top:25px; }
+    h1 { font-size: 1.2em; margin: .6em 0; }
+
+
+/*
+.navAgents_tabs_UNIQUE_generic_bpopup {
+        display:block;
+        line-height:1.25;
+}
+
+#navAgents_tabs_UNIQUE_route_menu_static_add_popup, .bMulti {
+        background-color:#fff;
+        border-radius:10px 10px 10px 10px;
+        box-shadow:0 0 25px 5px #999;
+        color:#111;
+        display:none;
+        min-width:1000px;
+        max-width:1000px;
+        padding:25px;
+}
+
+#navAgents_tabs_UNIQUE_route_menu_static_add_popup, .bMulti {
+    min-height:100px;
+
+}
+
+#navAgents_tabs_UNIQUE_route_menu_static_add_popup .logo {
+        color:#2B91AF;
+        font: bold 150% 'Petrona', sans;
+}
+
+*/
+
+
+
+ 
+
+</style>
+<div id="modAgents_html">
+	<div id="modAgents-navbar_div">
+	</div>
+
+<!--
+	<div class="navAgents_tabs_UNIQUE_generic_bpopup" id="navAgents_tabs_UNIQUE_route_menu_static_add_popup" style="display: none">
+		<span class="button bClose"><span>X</span></span>
+		<span class="logo">Add static route</span>
+		<p>hi</p>
+	</div>
+-->
+
+	<div class="navAgents_tabs_UNIQUE_generic_bpopup" id="navAgents_tabs_UNIQUE_route_menu_static_add_popup" style="display: none" title="Add static route">
+		
+		<form>
+			<fieldset>
+				<label for="route_static_dest_ip">Destination IP</label>
+				<input type="text" name="route_static_dest_ip" id="route_static_dest_ip" class="text ui-widget-content ui-corner-all" />
+				<label for="route_static_net_mask">Network Mask</label>
+				<input type="text" name="route_static_net_mask" id="route_static_net_mask" class="text ui-widget-content ui-corner-all" />
+				<label for="route_static_interface">Interface</label>
+				<select name="route_static_interface" id="route_static_interface">
+					<option value="eth0">eth0</option>
+				</select>
+				<label for="route_static_gateway">Gateway</label>
+				<input type="text" name="route_static_gateway" id="route_static_gateway" class="text ui-widget-content ui-corner-all"/>
+				<label for="route_static_metric">Metric</label>
+				<input type="text" name="route_static_metric" id="route_static_metric" class="text ui-widget-content ui-corner-all"/>
+
+				<label for="route_static_comments">Comments</label>
+				<input type="text" name="route_static_comments" id="route_static_comments" class="text ui-widget-content ui-corner-all"/>
+			</fieldset>
+		</form>
+
+	</div>
+
+
+</div>

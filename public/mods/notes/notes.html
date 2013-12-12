@@ -1,0 +1,57 @@
+<div id="modNotes_html">
+	<div id="modNotes_html_main">
+
+	<div>
+
+<!--
+		<label for="modNotes_title">Title</input>
+		<input type="text" id="modNotes_title" name="modNotes_title"></input>
+        <textarea id="notes_body" name="notes_body" class="tinymcex wymeditor" style="width:100%">
+        </textarea>
+-->
+
+        <!-- Some integration calls -->
+<!--
+        <a href="javascript:;" onmousedown="$('#content').tinymce().show();">[Show]</a>
+        <a href="javascript:;" onmousedown="$('#content').tinymce().hide();">[Hide]</a>
+        <a href="javascript:;" onmousedown="$('#content').tinymce().execCommand('Bold');">[Bold]</a>
+        <a href="javascript:;" onmousedown="alert($('#content').html());">[Get contents]</a>
+        <a href="javascript:;" onmousedown="alert($('#content').tinymce().selection.getContent());">[Get selected HTML]</a>
+        <a href="javascript:;" onmousedown="alert($('#content').tinymce().selection.getContent({format : 'text'}));">[Get selected text]</a>
+        <a href="javascript:;" onmousedown="alert($('#content').tinymce().selection.getNode().nodeName);">[Get selected element]</a>
+        <a href="javascript:;" onmousedown="$('#content').tinymce().execCommand('mceInsertContent',false,'<b>Hello world!!</b>');">[Insert HTML]</a>
+        <a href="javascript:;" onmousedown="$('#content').tinymce().execCommand('mceReplaceContent',false,'<b>{$selection}</b>');">[Replace selection]</a>
+</form>
+-->
+
+		<input id="modNotes_id" name="modNotes_id" placeholder="id" disabled></input>
+        <input type="text" id="modNotes_title" name="modNotes_title" placeholder="Title" style="width:100%"></input>
+<!--		<input type="text" id="modNotes_bleh"></input>-->
+        <textarea id="modNotes_body" name="notes_body" class="tinymcex wymeditor" style="width:100%;height:500px;" placeholder="body"></textarea>
+		<input type="text" id="modNotes_tags" placeholder="Tags" style="width:100%"></input>
+		<br/>
+
+	<button id="notes_save">save</button>
+	<button id="notes_cancel">cancel</button>
+
+<table id="notes_table" class="tablesorter">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>User</th>
+			<th>Title</th>
+			<th>Date</th>
+			<th>Tags</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody id="notes_table_tbody">
+	</tbody>
+</table>
+
+
+	</div>
+
+
+	</div>
+</div>

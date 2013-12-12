@@ -1,0 +1,68 @@
+nodesn.js:
+
+	setup config object
+	c.o.boot.load() : log boot operation, run bootup stuff
+
+		boot_mysql()		: connect to mysql server
+		process_argv_env()	: process argv & env. initializes c.o.pcap.ifaces list
+		boot_express()		: config the express server
+			
+			sets up /views/public etc
+
+		boot_https_server()	: config & boot the https server
+
+			c.o.db.webserv.run() :  https server now running.	
+
+				b.sock_io_app.sockets.on('connection'..) : setup new connection event handler
+
+					new_connection object created
+					
+					new_connection.handle_connection() : handle a new connection
+
+						server_pulls() : pull in the server private modules, these will set their own handlers
+
+							loop through b.server_pulls list
+
+							require each of those modules
+							
+							run the load({socket:this.socket}) operation	
+
+
+						socket.on('disconnect', and 'error') ...
+
+		
+	c.o.db.pcap_subs.load()	: load the pcap_subs module
+	c.o.db.load()			: loads the db module
+	c.o.db.boot()			: boots the sql module.
+
+		get_filters()		: pulls the pcap filters from the SQL DB & calls the pcap_init callback
+
+			pcap_init cb	: initializes the list of pcap interfaces to sniff on
+
+				pcap_session.on('packet') : sets the packet hook/callback (pcap_subs.log_packet())
+
+					pcap_subs.log_packet() : parses packet, notifies clients, adds to sql db etc
+
+	
+
+
+private/js/pcap_subs.js:
+
+	pcap_pseudo object: Contains captured packet info
+
+		self.constructor: called on new object creation, parses a received packet
+
+
+	pcap_init: called as a callback from get_filters(), sets up event handler for pcap packets on ifaces
+
+		pcap_session.on('packet', log_packet...) : upon receiving a packet, handle & log it
+
+			log_packet: create a new pcap_pseudo object, parse the packet into it, log/handle it
+
+				insert_cap_summary(): insert only unique packets into the cap_summary table
+	
+				insert_cap(): log every packet into the cap table
+
+				notify_clients_of_packet(): for every websocket client listener, notify them of this packet
+
+					loop through sock_io_app.sockets: emit packet to them

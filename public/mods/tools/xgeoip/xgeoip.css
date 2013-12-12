@@ -1,0 +1,20 @@
+[id='#modXGeoIP_html'] {
+	height: 100%;
+	width: 100%;
+}
+
+[id='#modXGeoIP_html_div_output_table'], table
+{
+/* margin:4em; */
+ border:#CCCCCC solid 0.1em;
+}
+[id='#modXGeoIP_html_div_output_table'], th, td
+{
+ border-bottom:#CCCCCC solid 0.1em;
+ border-left:#CCCCCC solid 0.1em;
+ padding:1em;
+}
+[id='#modXGeoIP_html_div_output_table'], th
+{
+ background:#A7FFFF;
+}

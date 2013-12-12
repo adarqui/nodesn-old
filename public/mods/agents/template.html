@@ -1,0 +1,143 @@
+<div id="navAgents_html_{MOD_ID}">
+
+	<p>hello. {MOD_ID}</p>
+
+	<style>
+		.ui-tabs-vertical { width: 55em; }
+		.ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left; width: 12em; }
+		.ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%; border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; }
+		.ui-tabs-vertical .ui-tabs-nav li a { display:block; }
+		.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; border-right-width: 1px; }
+		.ui-tabs-vertical .ui-tabs-panel { padding: 1em; float: right; width: 40em;}
+
+		.ui-menu { width: 150px; }
+
+/*
+#navAgents_tabs_{MOD_ID}_network_options_ifacesYES, #navAgents_{MOD_ID}_network_options_ifacesNO {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 2.5em;
+    float: left;
+    margin-right: 10px;
+}
+
+#navAgents_tabs_{MOD_ID}_network_options_ifacesYES li, #navAgents_{MOD_ID}_network_options_ifacesNO li {
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 1.2em;
+    width: 120px;
+}
+
+*/
+
+.connect_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 2.5em;
+    float: left;
+    margin-right: 10px;
+}
+
+.connect_list li {
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 1.2em;
+    width: 120px;
+}
+
+
+	</style>
+ 
+	<!-- SUB TABS - VERTICAL --!>
+	<div id="navAgents_tabs_{MOD_ID}">
+		<ul>
+			<li><a href="#navAgents_tabs_{MOD_ID}_profile">PROFILE</a></li>
+			<li><a href="#navAgents_tabs_{MOD_ID}_cpuinfo">CPUINFO</a></li>
+			<li><a href="#navAgents_tabs_{MOD_ID}_snort">SNORT</a></li>
+			<li><a href="#navAgents_tabs_{MOD_ID}_logs">LOGS</a></li>
+			<li><a href="#navAgents_tabs_{MOD_ID}_network">NETWORK</a></li>
+			<li><a href="#navAgents_tabs_{MOD_ID}_shell">SHELL</a></li>
+			<li><a href="#navAgents_tabs_{MOD_ID}_route">ROUTE</a></li>
+		</ul>
+
+		<div id="navAgents_tabs_{MOD_ID}_profile">
+			<h2>Device Profile Information</h2>
+
+			<table id="navAgents_tabs_{MOD_ID}_profile">
+				<tr><td>User</td><td id="navAgents_tabs_{MOD_ID}_profile_user"></td></tr>
+				<tr><td>Hostname</td><td id="navAgents_tabs_{MOD_ID}_profile_hostname"></td></tr>
+				<tr><td>Arch</td><td id="navAgents_tabs_{MOD_ID}_profile_arch"></td></tr>
+				<tr><td>Platform</td><td id="navAgents_tabs_{MOD_ID}_profile_platform"></td></tr>
+				<tr><td>Release</td><td id="navAgents_tabs_{MOD_ID}_profile_release"></td></tr>
+				<tr><td>Total Mem</td><td id="navAgents_tabs_{MOD_ID}_profile_totalmem"></td></tr>
+				<tr><td>Uptime</td><td id="navAgents_tabs_{MOD_ID}_profile_uptime"></td></tr>
+				<tr><td>CPUS</td><td id="navAgents_tabs_{MOD_ID}_profile_cpus"></td></tr>
+				<tr><td>Interfaces</td><td id="navAgents_tabs_{MOD_ID}_profile_interfaces"></td></tr>
+			</table>
+
+		</div>
+
+
+		<div id="navAgents_tabs_{MOD_ID}_cpuinfo">
+			<h2>Process utilization, memory, etc</h2>
+			<div id="navAgents_tabs_{MOD_ID}_cpuinfo_freemem" style="min-width: 700px; height: 400px; margin: 0 auto"></div>
+			<div id="navAgents_tabs_{MOD_ID}_cpuinfo_loadavg" style="min-width: 700px; height: 400px; margin: 0 auto"></div>
+		</div>
+
+		<div id="navAgents_tabs_{MOD_ID}_snort">
+			<div id="navAgents_tabs_{MOD_ID}_snort_options">options</div>
+			<div id="navAgents_tabs_{MOD_ID}_snort_log"></div>
+		</div>
+
+		<div id="navAgents_tabs_{MOD_ID}_logs">
+			<div id="navAgents_tabs_{MOD_ID}_logs_options"><p>logs</p></div>
+			<div id="navAgents_tabs_{MOD_ID}_logs_data"></div>
+		</div>
+
+		<div id="navAgents_tabs_{MOD_ID}_network">
+
+			<div id="navAgents_tabs_{MOD_ID}_network_options">
+						<ul id="navAgents_tabs_{MOD_ID}_network_options_ifacesYES" class="connect_list navAgents_tabs_{MOD_ID}_network_options_ifaces">
+							<li class="ui-state-highlight emptyMessage">Active</li>
+						</ul>
+						<ul id="navAgents_tabs_{MOD_ID}_network_options_ifacesNO" class="connect_list navAgents_tabs_{MOD_ID}_network_options_ifaces">
+							<li class="ui-state-highlight emptyMessage">Inactive</li>
+						</ul>
+			</div>
+
+			<div id="navAgents_tabs_{MOD_ID}_network_bandwidth" style="min-width: 700px; height: 400px; margin: 0 auto"></div>
+		<!-- end network -->
+		</div>
+
+		<div id="navAgents_tabs_{MOD_ID}_shell">
+			<p>shell</p>
+		</div>
+
+
+
+		<div id="navAgents_tabs_{MOD_ID}_route">
+			<p>route</p>
+
+			<ul id="navAgents_tabs_{MOD_ID}_route_menu" class="navAgents_tabs_UNIQUE_route_menu">
+				<li><a href="#">Static</a>
+					<ul>
+						<li><a id="#" class="navAgents_tabs_UNIQUE_route_menu_static_add">Add</a></li>
+					</ul>	
+				</li>
+				<li><a href="#">Policy</a>
+					<ul>
+						<li><a id="#" class="#navAgents_tabs_UNIQUE_route_menu_policy_add">Add</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Settings</a></li>
+				<li>
+				
+			</ul>
+
+		<!-- end route -->
+		</div>
+
+
+	</div>
+
+</div>

@@ -1,0 +1,10 @@
+sn = require('snort-socket').SnortSocket;
+util = require('util');
+
+var sock = new sn({ forceUnixDgram: true, debug: true, snapshotLength: 1500 });
+sock.on('alert', function(a) { 
+//	console.log(util.inspect(a));
+	console.log("hello",a);
+});
+
+sock.bind('/var/log/snort/snort_alert');

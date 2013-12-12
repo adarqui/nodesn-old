@@ -1,0 +1,180 @@
+liquid response: traffic shapes liquid (Canvas stuff etc)
+ability to put one ip/host in tools/whatever, then all tools pull info for it
+ - should be a setting just under the nav
+in packets: should be a button next to each packet entry, which pulls up tool info perhaps
+
+nodejs: charlatan, brain
+
+post to twitter/facebook etc
+
+
+
+
+google tool
+blacklist tool
+bgp tool
+anomaly
+mtu
+
+
+whois.apnic.net etc. need to figure out which ns first
+
+my own whois library: parse all this stuff and parse ip's etc
+
+Comment:        This IP address range is not registered in the ARIN database.
+Comment:        For details, refer to the APNIC Whois Database via   
+Comment:        WHOIS.APNIC.NET or http://wq.apnic.net/apnic-bin/whois.pl
+Comment:        ** IMPORTANT NOTE: APNIC is the Regional Internet Registry
+Comment:        for the Asia Pacific region. APNIC does not operate networks
+Comment:        using this IP address range and is not able to investigate
+Comment:        spam or abuse reports relating to these addresses. For more
+Comment:        help, refer to http://www.apnic.net/apnic-info/whois_search2/abuse-and-spamming
+RegDate:
+Updated:        2010-07-30
+Ref:            http://whois.arin.net/rest/net/NET-1-0-0-0-1
+
+OrgName:        Asia Pacific Network Information Centre
+OrgId:          APNIC
+Address:        PO Box 3646
+City:           South Brisbane
+StateProv:      QLD
+PostalCode:     4101
+Country:        AU
+RegDate:     
+Updated:        2012-01-24
+Ref:            http://whois.arin.net/rest/org/APNIC
+
+ReferralServer: whois://whois.apnic.net
+
+OrgTechHandle: AWC12-ARIN
+OrgTechName:   APNIC Whois Contact
+OrgTechPhone:  +61 7 3858 3188
+OrgTechEmail:  search-apnic-not-arin@apnic.net
+OrgTechRef:    http://whois.arin.net/rest/poc/AWC12-ARIN
+
+
+
+
+
+
+
+multiple interfaces: put interface in the exceptions table.. 
+ - startup should be like, node port iface iface2 iface3 etc
+ - multiple sniffer interfaces
+
+
+ability to firewall drop/ignore/log/etc
+info pulls info per ip: whois, nmap, openvas on demand, geoip, etc.. clicking pull down expands view and show it
+
+traceroute, whois, 
+
+ability to list the summary entry and then all nodes underneath (from cap)
+
+sniffer has to handle itnerface downs/ups etc
+
+
+id, box_id, timestamp, pcap_caplen, iface, ip_saddr, ip_daddr, ip_v, ip_hl, ip_totl, ip_proto, ip_cksum, tcp_sport, tcp_dport, tcp_flags, tcp_seqno, tcp_ackno, tcp_off, tcp_cksum, udp_sport, udp_dport, udp_cksum, data, data, ip_proto_data, nmap, openvas, info
+
+
+
+
+socket.io/lib/transport.js
+
+
+/**
+ * Handles a message.
+ *
+ * @param {Object} packet object
+ * @api private
+ */
+
+Transport.prototype.onMessage = function (packet) {
+  var current = this.manager.transports[this.id];
+
+
+
+
+
+ops table:
+	OP_LOGIN_LOGIN UID TS
+	OP_LOGIN_LOGOUT UID TS
+
+
+
+layout:
+main page should prompt for login page at first
+
+once logged in:
+summary, interfaces, etc
+
+
+
+
+
+
+server:
+
+accept connection:
+ socket
+
+	send pull_request "login"
+
+		wait for authentication
+
+			recv op_login user, pass
+
+				auth success:
+
+					inform success
+
+					loop through pull req's, send pull_req
+
+				auth failure:
+
+					kill client
+
+
+
+client:
+
+connect to server:
+ socket
+
+	recv pull_request "login"
+
+		pull "login" : get script, css, html	
+
+			login: display html login webform
+
+				click login
+
+					op_login user, pass
+
+						success:
+
+							recv pull_req's
+
+								pull everything
+
+
+
+
+
+server:
+
+new connection: socket
+
+	resp_navbar
+
+
+
+client:
+
+connect to server: socket
+
+	recv resp_navbar
+
+		build navbar
+
+		pull each element in the navbar: html, css, js
+
